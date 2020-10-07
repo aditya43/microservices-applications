@@ -40,3 +40,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Harder to understand.
 
 ----------------------------------------
+
+```diff
++ Event Bus
+```
+- Many different implementations. For e.g. `RabbitMQ`, `Kafka`, `NATS` etc..
+- Receives events, publishes them to listeners.
+- Many different subtle features that make async communication way easier or way harder.
+
+----------------------------------------
