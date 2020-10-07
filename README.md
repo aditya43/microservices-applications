@@ -33,6 +33,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * If any inter-service request failes, the entire service fails.
     * The entire request is only as fast as the slowest request.
     * Can easily introduce webs of requests.
-- **Async**: Service communicate with each other using **events**.
+- **Async (Event Based Communication)**: Services communicate with each other using **events**.
+    * No inter-service dependency.
+    * Service will be extremely fast since it has it's own data store.
+    * Introduces data duplication. Paying for extra storage + extra DB.
+    * Harder to understand.
 
 ----------------------------------------
