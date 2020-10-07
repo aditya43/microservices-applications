@@ -13,3 +13,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ----------------------------------------
 
 ## Notes
+
+```diff
++ Why Database Per-Service
+```
+- We want each service to run independently of other services.
+- Database schema/structure might change unexpectedly.
+- Some services might function efficiently with different types of DB's (SQL vs. NoSQL).
+
+----------------------------------------
