@@ -1,2 +1,15 @@
-# microservices101
-Microservices 101 | NodeJS
+## Microservices 101
+Microservices, Event Driven, Pub-Sub, Docker, Kubernetes, CI/CD etc.
+
+## Author
+Aditya Hajare ([Linkedin](https://in.linkedin.com/in/aditya-hajare)).
+
+## Current Status
+WIP (Work In Progress)!
+
+## License
+Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+----------------------------------------
+
+## Notes
