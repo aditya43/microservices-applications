@@ -54,5 +54,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 + Kubernetes Basic Terminologies
 ```
 - **Cluster**: A collection of `nodes` + a `master` to manage them.
+- **Node**: A `virtual machine` that runs our `containers`.
 
 ----------------------------------------
