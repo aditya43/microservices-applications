@@ -57,5 +57,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Node**: A `virtual machine` that runs our `containers`.
 - **Pod**: More or less a running container. Technically, a `pod` can run multiple containers.
 - **Deployment**: Monitors a `set of pods`. Make sure they are running and restarts them if they crash.
+- **Service**: Provides an `easy-to-remember URL` to access a running `container`.
 
 ----------------------------------------
