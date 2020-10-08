@@ -60,3 +60,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Service**: Provides an `easy-to-remember URL` to access a running `container`.
 
 ----------------------------------------
+
+```diff
++ Kubernetes Config Files
+```
+- Tells Kubernetes about the different Deployments, Pods and Services (Referred to as `Objects`) that we want to create.
+-
+
+
+----------------------------------------
