@@ -67,6 +67,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Tells Kubernetes about the different Deployments, Pods and Services (Referred to as `Objects`) that we want to create.
 - Written in `YAML` syntax.
 - Always store these files with our project source code - they are documentation!
+- We can create `Objects` without config files - **DO NOT DO THIS!**. Config files provide a precise definition of what our cluster is running.
 
 
 ----------------------------------------
