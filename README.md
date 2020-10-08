@@ -69,5 +69,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Always store these files with our project source code - they are documentation!
 - We can create `Objects` without config files - **DO NOT DO THIS!**. Config files provide a precise definition of what our cluster is running.
 
-
 ----------------------------------------
