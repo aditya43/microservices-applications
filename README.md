@@ -49,3 +49,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Many different subtle features that make async communication way easier or way harder.
 
 ----------------------------------------
+
+```diff
++ Kubernetes Basic Terminologies
+```
+- **Cluster**: A collection of `nodes` + a `master` to manage them.
+
+----------------------------------------
