@@ -56,5 +56,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Cluster**: A collection of `nodes` + a `master` to manage them.
 - **Node**: A `virtual machine` that runs our `containers`.
 - **Pod**: More or less a running container. Technically, a `pod` can run multiple containers.
+- **Deployment**: Monitors a `set of pods`. Make sure they are running and restarts them if they crash.
 
 ----------------------------------------
