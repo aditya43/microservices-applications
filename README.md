@@ -65,7 +65,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 + Kubernetes Config Files
 ```
 - Tells Kubernetes about the different Deployments, Pods and Services (Referred to as `Objects`) that we want to create.
--
+- Written in `YAML` syntax.
 
 
 ----------------------------------------
