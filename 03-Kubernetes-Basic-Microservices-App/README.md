@@ -1,4 +1,4 @@
-# 04. Orchestrating Collections of Services with Kubernetes
+# Orchestrating Collections of Services with Kubernetes
 
 **I recommend to use "react-scripts": "3.4.0". With "react-scripts": "3.4.1" there were errors with starting "client" container in minikube.**
 
