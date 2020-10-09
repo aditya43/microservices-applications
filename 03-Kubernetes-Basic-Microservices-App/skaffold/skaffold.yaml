@@ -6,7 +6,7 @@ deploy:
       - ../k8s/*
 build:
   local:
-    push: true
+    push: false
   artifacts:
     - image: aditya43/hajare-ms-app1-client
       context: ../app/client
