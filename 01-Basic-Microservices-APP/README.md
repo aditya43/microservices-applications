@@ -264,7 +264,7 @@
 
 <br/>
 
-### 28. A Second Approach
+### A Second Approach
 
 <br/>
 
@@ -272,7 +272,7 @@
 
 <br/>
 
-### 29. How to Handle Resource Updates
+### How to Handle Resource Updates
 
 <br/>
 
@@ -280,7 +280,7 @@
 
 <br/>
 
-### 30. Creating the Moderation Service
+### Creating the Moderation Service
 
 <br/>
 
@@ -297,15 +297,15 @@
 
 <br/>
 
-### 31. Adding Comment Moderation
+### Adding Comment Moderation
 
 <br/>
 
-### 32. Handling Moderation
+### Handling Moderation
 
 <br/>
 
-### 33. Updating Comment Content
+### Updating Comment Content
 
 <br/>
 
