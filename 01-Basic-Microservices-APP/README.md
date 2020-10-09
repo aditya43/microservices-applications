@@ -203,15 +203,15 @@
 
 <br/>
 
-### 20. Emitting Events
+### Emitting Events
 
 <br/>
 
-### 21. Emitting Comment Creation Events
+### Emitting Comment Creation Events
 
 <br/>
 
-### 22. Receiving Events
+### Receiving Events
 
 <br/>
 
@@ -219,7 +219,7 @@
 
 <br/>
 
-### 23. Creating the Data Query Service
+### Creating the Data Query Service
 
 <br/>
 
