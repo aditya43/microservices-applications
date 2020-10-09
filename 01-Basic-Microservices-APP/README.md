@@ -309,13 +309,13 @@
 
 <br/>
 
-### 34. A Quick Test
+### A Quick Test
 
 Comment with text 'orange' has status 'rejected'.
 
 <br/>
 
-### 35. Rendering Comments by Status
+### Rendering Comments by Status
 
 <br/>
 
@@ -323,7 +323,7 @@ Comment with text 'orange' has status 'rejected'.
 
 <br/>
 
-### 36. Dealing with Missing Events
+### Dealing with Missing Events
 
 <br/>
 
@@ -343,10 +343,10 @@ Comment with text 'orange' has status 'rejected'.
 
 <br/>
 
-### 37. Implementing Event Sync
+### Implementing Event Sync
 
 <br/>
 
-### 38. Event Syncing in Action
+### Event Syncing in Action
 
 ---
