@@ -236,15 +236,15 @@
 
 <br/>
 
-### 24. Parsing Incoming Events
+### Parsing Incoming Events
 
 <br/>
 
-### 25. Using the Query Service
+### Using the Query Service
 
 <br/>
 
-### 26. Adding a Simple Feature
+### Adding a Simple Feature
 
 <br/>
 
@@ -256,7 +256,7 @@
 
 <br/>
 
-### 27. Issues with Comment Filtering
+### Issues with Comment Filtering
 
 <br/>
 
