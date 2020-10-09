@@ -6,7 +6,7 @@
 
 <br/>
 
-### 02. Project Setup
+### Project Setup
 
     $ npm install -g nodemon
 
@@ -36,7 +36,7 @@
 
 <br/>
 
-### 03. Posts Service Creation
+### Posts Service Creation
 
 <br/>
 
@@ -49,7 +49,7 @@
 
 <br/>
 
-### 04. Testing the Posts Service
+### Testing the Posts Service
 
 <br/>
 
@@ -67,7 +67,7 @@
 
 <br/>
 
-### 05. Implementing a Comments Service
+### Implementing a Comments Service
 
 <br/>
 
@@ -90,7 +90,7 @@
 
 <br/>
 
-### 06. Quick Comments Test
+### Quick Comments Test
 
 <br/>
 
@@ -109,7 +109,7 @@
 
 <br/>
 
-### 08. React Project Setup
+### React Project Setup
 
 <br/>
 
@@ -128,7 +128,7 @@
 
 <br/>
 
-### 09. Building Post Submission
+### Building Post Submission
 
 <br/>
 
@@ -136,11 +136,11 @@
 
 <br/>
 
-### 10. Handling CORS Errors
+### Handling CORS Errors
 
 <br/>
 
-### 11. Fetching and Rendering Posts
+### Fetching and Rendering Posts
 
 <br/>
 
@@ -148,7 +148,7 @@
 
 <br/>
 
-### 12. Creating Comments
+### Creating Comments
 
 <br/>
 
@@ -156,7 +156,7 @@
 
 <br/>
 
-### 13. Displaying Comments
+### Displaying Comments
 
 <br/>
 
@@ -164,19 +164,19 @@
 
 <br/>
 
-### 15. Request Minimization Strategies
+### Request Minimization Strategies
 
 <br/>
 
-### 16. An Async Solution
+### An Async Solution
 
 <br/>
 
-### 17. Common Questions Around Async Events
+### Common Questions Around Async Events
 
 <br/>
 
-### 18. Event Bus Overview
+### Event Bus Overview
 
 <br/>
 
@@ -184,7 +184,7 @@
 
 <br/>
 
-### 19. A Basic Event Bus Implementation
+### A Basic Event Bus Implementation
 
     $ cd app
     $ mkdir event-bus
