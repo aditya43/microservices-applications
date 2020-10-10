@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-02-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-02
+  template:
+    metadata:
+      labels:
+        app: service-02
+    spec:
+      containers:
+        - name: service-02
+          image: aditya43/service-02
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-02-svc
+spec:
+  selector:
+    app: service-02
+  ports:
+    - name: service-02
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
