@@ -5,5 +5,5 @@ const app = express();
 app.use(json());
 
 app.listen(3000, () => {
-    console.log('Auth service listening on 3000');
+    console.log('Service 02 listening on 3000');
 });
