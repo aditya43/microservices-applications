@@ -8,7 +8,7 @@ const router = express.Router();
 router.post(
     '/api/users/signup',
     [
-        body('email').isEmail().withMessage('Invalid email address'),
+        body('email').isEmail().withMessage('Email must be valid'),
         body('password')
             .trim()
             .isLength({ min: 4, max: 20 })
@@ -23,9 +23,8 @@ router.post(
 
         // const { email, password } = req.body;
 
-        throw new DatabaseConnectionError();
-
         console.log('Crateing a user...');
+        throw new DatabaseConnectionError();
 
         return res.send({});
     },
