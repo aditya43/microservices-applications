@@ -13,4 +13,13 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
-export { User };
+// An interface to describe what attributes
+// are allowed and required by User
+interface UserInterface {
+    email: string;
+    password: string;
+}
+
+const createUser = (params: UserInterface) => new User(params);
+
+export { User, createUser };
