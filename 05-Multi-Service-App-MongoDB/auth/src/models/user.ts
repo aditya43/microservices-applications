@@ -20,6 +20,6 @@ interface UserInterface {
     password: string;
 }
 
-const createUser = (params: UserInterface) => new User(params);
+userSchema.statics.create = (params: UserInterface) => new User(params);
 
-export { User, createUser };
+export { User };
