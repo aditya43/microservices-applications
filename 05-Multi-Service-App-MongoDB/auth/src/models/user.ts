@@ -1,5 +1,18 @@
 import mongoose from 'mongoose';
 
+// An interface that describes the properties
+// required to create a new User
+interface UserPropsInterface {
+    email: string;
+    password: string;
+}
+
+// An interface that describes the properties
+// that a User model has.
+interface UserModelInterface extends mongoose.Model<any> {
+    build(params: UserPropsInterface): any;
+}
+
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -11,15 +24,8 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-const User = mongoose.model('User', userSchema);
+userSchema.statics.build = (params: UserPropsInterface) => new User(params);
 
-// An interface to describe what attributes
-// are allowed and required by User
-interface UserInterface {
-    email: string;
-    password: string;
-}
-
-userSchema.statics.create = (params: UserInterface) => new User(params);
+const User = mongoose.model<any, UserModelInterface>('User', userSchema);
 
 export { User };
