@@ -6,7 +6,7 @@ import { validateRequest } from '../middlewares/validate-request';
 import { BadRequestError } from '../errors/bad-request';
 
 import { User } from '../models/user';
-import { PasswordManager } from '../services/password';
+import { PasswordManager } from '../services/password-manager';
 
 const router = express.Router();
 
