@@ -50,7 +50,7 @@ router.post(
         // Store JWT on session object
         req.session = { jwt: userJwt };
 
-        return res.status(201).send(existingUser);
+        return res.status(200).send(existingUser);
     },
 );
 
