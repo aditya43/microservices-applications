@@ -39,7 +39,7 @@ router.post(
                 id: user.id,
                 email: user.email,
             },
-            'aditya',
+            process.env.JWT_KEY!,
         );
 
         // Store JWT on session object

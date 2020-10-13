@@ -34,6 +34,10 @@ app.all('*', async () => {
 app.use(errorHandler);
 
 const init = async () => {
+    if (!process.env.JWT_KEY) {
+        throw new Error('JWT_KEY is not set in environment');
+    }
+
     try {
         await mongoose.connect('mongodb://auth-mongo-svc:27017/auth', {
             useUnifiedTopology: true,
