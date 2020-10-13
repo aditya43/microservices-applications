@@ -35,6 +35,20 @@ router.post(
         if (!match) {
             throw new BadRequestError('Invalid credentials');
         }
+
+        // Generate JWT
+        const userJwt = jwt.sign(
+            {
+                id: user.id,
+                email: user.email,
+            },
+            process.env.JWT_KEY!,
+        );
+
+        // Store JWT on session object
+        req.session = { jwt: userJwt };
+
+        return res.status(201).send(user);
     },
 );
 
