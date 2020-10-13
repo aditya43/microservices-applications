@@ -70,3 +70,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We can create `Objects` without config files - **DO NOT DO THIS!**. Config files provide a precise definition of what our cluster is running.
 
 ----------------------------------------
+
+```diff
++ Securely Create Secrets In Kubernetes
+```
+- Following command will create a secret called `JWT_KEY`:
+    > `kubectl create secret generic jwt-secret --from-literal=`**JWT_KEY=adityahajare**
+
+----------------------------------------
