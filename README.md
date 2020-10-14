@@ -1,5 +1,5 @@
-## Microservices 101
-Microservices, Event Driven, Pub-Sub, Docker, Kubernetes, CI/CD etc.
+## Microservices Applications
+Technologies: TypeScript, Node.JS, Express, React, Redux, Next.js, MongoDB, Mongoose, Event Driven, Pub-Sub, Docker, Kubernetes, CI/CD, Skaffold, Apache Kafka etc.
 
 ## Author
 Aditya Hajare ([Linkedin](https://in.linkedin.com/in/aditya-hajare)).
