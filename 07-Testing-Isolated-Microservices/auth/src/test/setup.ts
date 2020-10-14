@@ -1,9 +1,10 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import { app } from '../app';
+// import { app } from '../app';
 
 let mongo: MongoMemoryServer;
 beforeAll(async () => {
+    process.env.JWT_KEY = 'adityahajare';
     mongo = new MongoMemoryServer();
     const mongoUri = await mongo.getUri();
 
