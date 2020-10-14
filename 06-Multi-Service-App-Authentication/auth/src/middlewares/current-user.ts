@@ -11,7 +11,7 @@ interface UserPayload {
 declare global {
     namespace Express {
         interface Request {
-            currentUser?: UserPayload;
+            currentUser?: UserPayload | null;
         }
     }
 }
@@ -31,7 +31,7 @@ export const currentUser = (
             process.env.JWT_KEY!,
         ) as UserPayload;
     } catch (e) {
-        res.send({ currentUser: null });
+        req.currentUser = null;
     }
 
     next();
