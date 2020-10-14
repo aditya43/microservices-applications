@@ -2,8 +2,9 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import { app } from '../app';
 
+let mongo: MongoMemoryServer;
 beforeAll(async () => {
-    const mongo = new MongoMemoryServer();
+    mongo = new MongoMemoryServer();
     const mongoUri = await mongo.getUri();
 
     await mongoose.connect(mongoUri, {
@@ -18,4 +19,9 @@ beforeEach(async () => {
     for (let collection of collections) {
         await collection.deleteMany({});
     }
+});
+
+afterAll(async () => {
+    await mongo.stop();
+    await mongoose.connection.close();
 });
