@@ -5,7 +5,7 @@ RUN apk add --no-cache --update tini
 WORKDIR /app
 
 COPY package.json ./
-RUN npm install && npm cache clean --force
+RUN npm install --only=prod && npm cache clean --force
 COPY ./ ./
 
 # CMD ["npm", "start"]
