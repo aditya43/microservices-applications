@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken';
 
 import { body } from 'express-validator';
 import { User } from '../models/user';
-import { validateRequest } from '../middlewares/validate-request';
-import { BadRequestError } from '../errors/bad-request';
+import { validateRequest } from '@adi-microservices/common';
+import { BadRequestError } from '@adi-microservices/common';
 
 const router = express.Router();
 

@@ -8,8 +8,8 @@ import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
 import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
-import { errorHandler } from './middlewares/error-handler';
-import { NotFoundError } from './errors/not-found';
+import { errorHandler } from '@adi-microservices/common';
+import { NotFoundError } from '@adi-microservices/common';
 
 const app = express();
 app.set('trust proxy', true); // To make express know that it is behind the proxy of ingress and trust the traffic
