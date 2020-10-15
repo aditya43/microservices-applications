@@ -39,6 +39,6 @@
 
 <br/>
 
-![Application](/img/pic-10-05.png?raw=true)
+![Application](/img/pic-10-05.jpg?raw=true)
 
 <br/>
