@@ -119,29 +119,45 @@ https://adi-ticketing.dev/auth/signup
 <br/>
 
 ### Specifying the Host
-
+To access services in two different namespaces you can use url like this:
 <br/>
 
     http://SERVICENAME.NAMESPACE.svc.cluster.local
+    # OR
+    http://<your-service-name>.<namespace-with-that-service>.svc.cluster.local
 
 <br/>
 
-    $ kubectl get ingress --all-namespaces
-    NAMESPACE   NAME          CLASS    HOSTS           ADDRESS      PORTS   AGE
-    default     ingress-svc   <none>   ticketing.dev   172.17.0.2   80      123m
+To list out your all namespace you can use:
 
 <br/>
 
-    // NOT WORKS for ME.
-    http://ingress-svc.default.svc.cluster.local
+    kubectl get namespace
+    # NAME              STATUS   AGE
+    # default           Active   5d6h
+    # ingress-nginx     Active   4d6h ##### WE ARE INTERESTED IN THIS ONE
+    # kube-node-lease   Active   5d6h
+    # kube-public       Active   5d6h
+    # kube-system       Active   5d6h
 
 <br/>
 
-    $ kubectl exec -ti auth-deployment-5494fcdc44-hw75w -- nslookup 172.17.0.2
-    nslookup: can't resolve '(null)': Name does not resolve
+And for service in that namespace you can simply use:
 
-    Name:      172.17.0.2
-    Address 1: 172.17.0.2 172-17-0-2.kubernetes.default.svc.cluster.local
+<br/>
+
+    kubectl get services -n ingress-nginx
+    # NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+    # ingress-nginx-controller             LoadBalancer   10.108.71.140    localhost     80:30462/TCP,443:31352/TCP   4d6h
+    # ingress-nginx-controller-admission   ClusterIP      10.107.252.126   <none>        443/TCP                      4d6h
+
+<br/>
+
+Our final URL will be:
+
+<br/>
+
+    http://ingress-nginx-controller.ingress-nginx.svc.cluster.local
 
 <br/>
 
@@ -165,7 +181,7 @@ https://adi-ticketing.dev/auth/signup
 
 <br/>
 
-### 34. Signing Out
+### Signing Out
 
 <br/>
 
