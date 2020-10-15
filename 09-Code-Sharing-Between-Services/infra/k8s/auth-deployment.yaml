@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: aditya43/auth
+          image: adityahajare/auth
           env:
             - name: JWT_KEY
               valueFrom:
