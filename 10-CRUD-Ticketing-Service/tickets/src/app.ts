@@ -4,6 +4,8 @@ import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
+import { errorHandler, NotFoundError } from '@adi-microservices/common';
+
 const app = express();
 app.set('trust proxy', true); // To make express know that it is behind the proxy of ingress and trust the traffic
 app.use(json());
