@@ -7,4 +7,6 @@ it('can only be accessed if the user is signed in', async () => {});
 
 it('returns an error if invalid title is provided', async () => {});
 
+it('returns an error if invalid price is provided', async () => {});
+
 it('creates a ticket when valid inputs are provided', async () => {});
