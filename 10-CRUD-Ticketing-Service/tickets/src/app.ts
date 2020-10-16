@@ -4,7 +4,11 @@ import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
-import { errorHandler, NotFoundError } from '@adi-microservices/common';
+import {
+    errorHandler,
+    NotFoundError,
+    currentUser,
+} from '@adi-microservices/common';
 
 import { createTicketRouter } from './routes/new';
 
@@ -17,6 +21,8 @@ app.use(
         secure: process.env.NODE_ENV !== 'test',
     }),
 );
+
+app.use(currentUser);
 
 app.use(createTicketRouter);
 
