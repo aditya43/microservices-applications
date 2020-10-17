@@ -3,8 +3,9 @@ import mongoose from 'mongoose';
 // An interface that describes the properties
 // required to create a new Ticket
 interface TicketPropsInterface {
-    email: string;
-    password: string;
+    title: string;
+    price: number;
+    userId: string;
 }
 
 // An interface that describes the properties
