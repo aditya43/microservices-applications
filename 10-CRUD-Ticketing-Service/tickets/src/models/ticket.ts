@@ -53,3 +53,10 @@ const ticketSchema = new mongoose.Schema(
 
 ticketSchema.statics.build = (params: TicketPropsInterface) =>
     new Ticket(params);
+
+const Ticket = mongoose.model<TicketDocInterface, TicketModelInterface>(
+    'Ticket',
+    ticketSchema,
+);
+
+export { Ticket };
