@@ -14,8 +14,8 @@ interface TicketModelInterface extends mongoose.Model<TicketDocInterface> {
 }
 
 // An interface that describes the properties
-// that a User Document has.
-interface UserDocInterface extends mongoose.Document {
+// that a Ticket Document has.
+interface TicketDocInterface extends mongoose.Document {
     email: string;
     password: string;
     createdAt?: string;
