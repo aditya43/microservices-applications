@@ -50,3 +50,6 @@ const ticketSchema = new mongoose.Schema(
         },
     },
 );
+
+ticketSchema.statics.build = (params: TicketPropsInterface) =>
+    new Ticket(params);
