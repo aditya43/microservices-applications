@@ -26,11 +26,15 @@ interface TicketDocInterface extends mongoose.Document {
 
 const ticketSchema = new mongoose.Schema(
     {
-        email: {
+        title: {
             type: String,
             required: true,
         },
-        password: {
+        price: {
+            type: Number,
+            required: true,
+        },
+        userId: {
             type: String,
             required: true,
         },
@@ -42,8 +46,6 @@ const ticketSchema = new mongoose.Schema(
             transform(_, ret) {
                 ret.id = ret._id;
                 delete ret._id;
-                delete ret.password;
-                // delete ret.__v;
             },
         },
     },
