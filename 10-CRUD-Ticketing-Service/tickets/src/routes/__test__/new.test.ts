@@ -40,6 +40,15 @@ it('returns an error if invalid title is provided', async () => {
         .expect(400);
 });
 
-it('returns an error if invalid price is provided', async () => {});
+it('returns an error if invalid price is provided', async () => {
+    await request(app)
+        .post('/api/tickets')
+        .set('Cookie', global.signin())
+        .send({
+            title: 'ADITYA TESTING',
+            // price: 10, // Not sending price at all
+        })
+        .expect(400);
+});
 
 it('creates a ticket when valid inputs are provided', async () => {});
