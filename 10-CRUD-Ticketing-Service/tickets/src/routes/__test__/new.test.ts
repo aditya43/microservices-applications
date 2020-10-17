@@ -49,6 +49,15 @@ it('returns an error if invalid price is provided', async () => {
             // price: 10, // Not sending price at all
         })
         .expect(400);
+
+    await request(app)
+        .post('/api/tickets')
+        .set('Cookie', global.signin())
+        .send({
+            title: 'ADITYA TESTING',
+            price: -10,
+        })
+        .expect(400);
 });
 
 it('creates a ticket when valid inputs are provided', async () => {});
