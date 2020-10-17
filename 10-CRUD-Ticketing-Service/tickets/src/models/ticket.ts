@@ -22,7 +22,7 @@ interface TicketDocInterface extends mongoose.Document {
     updatedAt?: string;
 }
 
-const userSchema = new mongoose.Schema(
+const ticketSchema = new mongoose.Schema(
     {
         email: {
             type: String,
