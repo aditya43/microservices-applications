@@ -63,7 +63,6 @@ it('returns an error if invalid price is provided', async () => {
 
 it('creates a ticket when valid inputs are provided', async () => {
     let tickets = await Ticket.find({});
-
     expect(tickets.length).toEqual(0);
 
     const title = 'ADITYA TESTING';
@@ -78,7 +77,7 @@ it('creates a ticket when valid inputs are provided', async () => {
 
     tickets = await Ticket.find({});
 
-    expect(tickets.length).toEqual(0);
+    expect(tickets.length).toEqual(1);
     expect(tickets[0].title).toEqual(title);
     expect(tickets[0].price).toEqual(20);
 });
