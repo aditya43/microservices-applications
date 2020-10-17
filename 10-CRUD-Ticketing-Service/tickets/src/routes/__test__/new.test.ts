@@ -25,6 +25,15 @@ it('returns an error if invalid title is provided', async () => {
         .post('/api/tickets')
         .set('Cookie', global.signin())
         .send({
+            // title: '', // Not sending title at all
+            price: 10,
+        })
+        .expect(400);
+
+    await request(app)
+        .post('/api/tickets')
+        .set('Cookie', global.signin())
+        .send({
             title: '',
             price: 10,
         })
