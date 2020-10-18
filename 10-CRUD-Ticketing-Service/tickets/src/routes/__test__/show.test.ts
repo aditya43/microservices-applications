@@ -3,3 +3,5 @@ import { app } from '../../app';
 import { Ticket } from '../../models/ticket';
 
 it('returns 404 if the ticket is not found', async () => {});
+
+it('returns ticket if it is found', async () => {});
