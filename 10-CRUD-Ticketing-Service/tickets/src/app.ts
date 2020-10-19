@@ -12,6 +12,7 @@ import {
 
 import { createTicketRouter } from './routes/new';
 import { showTicketRouter } from './routes/show';
+import { indexTicketRouter } from './routes/index';
 
 const app = express();
 app.set('trust proxy', true); // To make express know that it is behind the proxy of ingress and trust the traffic
@@ -27,6 +28,7 @@ app.use(currentUser);
 
 app.use(createTicketRouter);
 app.use(showTicketRouter);
+app.use(indexTicketRouter);
 
 app.all('*', async () => {
     throw new NotFoundError();
