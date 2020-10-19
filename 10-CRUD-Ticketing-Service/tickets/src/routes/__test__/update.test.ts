@@ -9,7 +9,7 @@ it('return a 404 if the provided id does not exist', async () => {
         .put(`/api/tickets/${id}`)
         .set('Cookie', global.signin())
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: 20,
         })
         .expect(404);
@@ -21,7 +21,7 @@ it('returns a 401 if the user is not authenticated', async () => {
     await request(app)
         .put(`/api/tickets/${id}`)
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: 20,
         })
         .expect(401);
@@ -32,7 +32,7 @@ it('return a 401 if the user does not own the ticket', async () => {
         .post('/api/tickets')
         .set('Cookie', global.signin())
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: 20,
         })
         .expect(201);
@@ -41,7 +41,7 @@ it('return a 401 if the user does not own the ticket', async () => {
         .put(`/api/tickets/${response.body.id}`)
         .set('Cookie', global.signin())
         .send({
-            title: 'aslkdfj1',
+            title: 'Adi Test1',
             price: 10,
         })
         .expect(401);
@@ -54,7 +54,7 @@ it('return a 400 if the user provides an invalid title or price', async () => {
         .post('/api/tickets')
         .set('Cookie', cookie)
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: 20,
         })
         .expect(201);
@@ -72,7 +72,7 @@ it('return a 400 if the user provides an invalid title or price', async () => {
         .put(`/api/tickets/${response.body.id}`)
         .set('Cookie', cookie)
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: -10,
         })
         .expect(400);
@@ -85,7 +85,7 @@ it('updates the ticket provided valid input', async () => {
         .post('/api/tickets')
         .set('Cookie', cookie)
         .send({
-            title: 'aslkdfj',
+            title: 'Adi Test',
             price: 20,
         })
         .expect(201);
@@ -94,7 +94,7 @@ it('updates the ticket provided valid input', async () => {
         .put(`/api/tickets/${response.body.id}`)
         .set('Cookie', cookie)
         .send({
-            title: 'new title',
+            title: 'New Title',
             price: 100,
         })
         .expect(200);
@@ -103,6 +103,6 @@ it('updates the ticket provided valid input', async () => {
         .get(`/api/tickets/${response.body.id}`)
         .send();
 
-    expect(ticketResponse.body.title).toEqual('new title');
+    expect(ticketResponse.body.title).toEqual('New Title');
     expect(ticketResponse.body.price).toEqual(100);
 });
