@@ -7,4 +7,10 @@ const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
 
 client.on('connect', () => {
     console.log('Listener connected to NATS');
+
+    const subscription = client.subscribe('ticket:created');
+
+    subscription.on('message', (msg) => {
+        console.log('Message Received', msg);
+    });
 });
