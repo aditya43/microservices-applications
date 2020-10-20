@@ -4,3 +4,6 @@
 [submodule "node-microservices-common"]
 	path = 10-CRUD-Ticketing-Service/common
 	url = git@github.com:aditya43/node-microservices-common.git
+[submodule "node-microservices-common"]
+	path = 11-NATS-Streaming-Server-Event-Bus/common
+	url = git@github.com:aditya43/node-microservices-common.git
