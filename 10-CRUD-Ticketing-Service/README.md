@@ -1,124 +1,163 @@
-### Shared Logic Between Services
-
-<br/>
-
-![Application](/img/pic-12-01.png?raw=true)
-
-<br/>
-
-### Options for Code Sharing
-
-<br/>
-
-![Application](/img/pic-12-02.png?raw=true)
-
-<br/>
-
-![Application](/img/pic-12-03.png?raw=true)
-
-<br/>
-
-### NPM Organizations
-
-<br/>
-
-![Application](/img/pic-12-04.png?raw=true)
-
-<br/>
-
-npmjs --> create organization
-
-<br/>
-
-![Application](/img/pic-12-05.png?raw=true)
-
-<br/>
-
-### Publishing NPM Modules
-
-    $ cd app
-    $ mkdir common
-    $ cd common/
-    $ npm init -y
-
-<br/>
-
-    $ git init
-    $ git add .
-    $ git commit -m "initial commit"
-
-<br/>
-
-    $ npm login
-    $ npm publish --acces public
+### Ticketing Service Overview
 
 <br/>
 
 ### Project Setup
 
-    $ tsc --init
-    $ npm install --save-dev typescript del-cli
+    $ cd app
+    $ mkdir tickets
+
+copy some files from auth project
+
+    $ npm install
 
 <br/>
 
-**tsconfig.json**
+### Running the Ticket Service
 
-    "declaration": true
-    "outDir": "./build"
-
-<br/>
-
-    $ npm run build
+    $ skaffold dev
 
 <br/>
 
-### An Easy Publish Command
+### Test-First Approach
+
+    $ cd tickets
+    $ npm run test
 
 <br/>
 
-    $ npm version patch
-    $ npm run build
+### Reminder on Mongoose with TypeScript
 
 <br/>
 
-### Relocating Shared Code
-
-```
-auth/src/errors copy to common/src/errors
-auth/src/middlewares copy to common/src/middlewares
-```
-
-    $ npm install --save \
-    express \
-    express-validator \
-    cookie-session \
-    jsonwebtoken \
-    @types/cookie-session \
-    @types/express \
-    @types/jsonwebtoken
+![Application](/img/pic-13-01.png?raw=true)
 
 <br/>
 
-    $ tsc
+### Better Error Logging
 
-<br/>
-
+    $ cd common
     $ npm run publish
 
 <br/>
 
-### Updating Import Statements
-
-    $ cd auth
-    $ npm install --save @adi-microservices/common
+    $ cd tickets
+    $ npm update @grider-ms-tickets/common
 
 <br/>
 
-### Updating the Common Module
+### Manual Testing
 
-    $ cd auth
-    $ npm update @adi-microservices/common
+<br/>
 
----
+```
+// SIGN UP
+$ curl \
+--insecure \
+--cookie-jar /tmp/cookies.txt \
+--data '{"email":"aditya@hajare.com", "password":"123456789"}' \
+--header "Content-Type: application/json" \
+--request POST https://adi-ticketing.dev/api/users/signup \
+| python -m json.tool
+```
+
+<br/>
+
+```
+// SIGN IN
+$ curl \
+--data '{"email":"aditya@hajare.com", "password":"123456789"}' \
+--header "Content-Type: application/json" \
+--request POST http://adi-ticketing.dev/api/users/signin \
+| python -m json.tool
+```
+
+<br/>
+
+```
+// GET CURRENT USER
+$ curl \
+--insecure \
+--cookie /tmp/cookies.txt \
+--header "Content-Type: application/json" \
+--request GET https://adi-ticketing.dev/api/users/currentuser \
+| python -m json.tool
+```
+
+<br/>
+
+```
+// CREATE TICKET
+$ curl \
+--insecure \
+--cookie /tmp/cookies.txt \
+--data '{"title":"concert", "price":10}' \
+--header "Content-Type: application/json" \
+--request POST https://adi-ticketing.dev/api/tickets \
+| python -m json.tool
+```
+
+<br/>
+
+**response:**
+
+```
+{
+    "__v": 0,
+    "id": "5ebaa8a74cea0900186b7ec8",
+    "price": 10,
+    "title": "concert",
+    "userId": "5ebaa6a3fc342b0023ded8a4"
+}
+```
+
+<br/>
+
+```
+// GET TICKET
+$ curl \
+--insecure \
+--header "Content-Type: application/json" \
+--request GET https://adi-ticketing.dev/api/tickets/5ebaa8a74cea0900186b7ec8 \
+| python -m json.tool
+```
+
+<br/>
+
+**response:**
+
+```
+{
+    "__v": 0,
+    "id": "5ebaa8a74cea0900186b7ec8",
+    "price": 10,
+    "title": "concert",
+    "userId": "5ebaa6a3fc342b0023ded8a4"
+}
+```
+
+<br/>
+
+```
+// GET ALL TICKET
+$ curl \
+--insecure \
+--header "Content-Type: application/json" \
+--request GET https://adi-ticketing.dev/api/tickets/ \
+| python -m json.tool
+```
+
+<br/>
+
+```
+// UPDATE TICKET
+$ curl \
+--insecure \
+--cookie /tmp/cookies.txt \
+--data '{"title":"new concert", "price":100}' \
+--header "Content-Type: application/json" \
+--request PUT https://adi-ticketing.dev/api/tickets/5ebaa8a74cea0900186b7ec8 \
+| python -m json.tool
+```
 
 <br/>
