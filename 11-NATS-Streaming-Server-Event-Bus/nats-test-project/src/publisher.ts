@@ -8,6 +8,11 @@ const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
 client.on('connect', () => {
     console.log('Publisher connected to NATS');
 
+    client.on('close', () => {
+        console.log('NATS connection closed!');
+        process.exit();
+    });
+
     const data = JSON.stringify({
         id: '123',
         title: 'Aditya Testing',
@@ -18,3 +23,6 @@ client.on('connect', () => {
         console.log('Event published');
     });
 });
+
+process.on('SIGINT', () => client.close());
+process.on('SIGTERM', () => client.close());
