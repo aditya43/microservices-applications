@@ -8,7 +8,8 @@ const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
 client.on('connect', () => {
     console.log('Listener connected to NATS');
 
-    const options = client.subscriptionOptions();
+    const options = client.subscriptionOptions().setManualAckMode(true);
+
     const subscription = client.subscribe(
         'ticket:created',
         'orders-service-queue-group',
@@ -25,5 +26,7 @@ client.on('connect', () => {
                 )} `,
             );
         }
+
+        msg.ack(); // Manual acknowledgement
     });
 });
