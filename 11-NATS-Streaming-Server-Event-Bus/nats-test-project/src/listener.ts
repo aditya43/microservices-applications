@@ -1,4 +1,4 @@
-import nats from 'node-nats-streaming';
+import nats, { Message } from 'node-nats-streaming';
 import { randomBytes } from 'crypto';
 
 const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
@@ -10,7 +10,15 @@ client.on('connect', () => {
 
     const subscription = client.subscribe('ticket:created');
 
-    subscription.on('message', (msg) => {
-        console.log('Message Received', msg);
+    subscription.on('message', (msg: Message) => {
+        const data = msg.getData();
+
+        if (typeof data === 'string') {
+            console.log(
+                `Received event #${msg.getSequence()}, with data: ${JSON.parse(
+                    data,
+                )} `,
+            );
+        }
     });
 });
