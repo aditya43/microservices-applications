@@ -36,5 +36,5 @@ client.on('connect', () => {
     });
 });
 
-process.on('SIGINTT', () => client.close());
+process.on('SIGINT', () => client.close());
 process.on('SIGTERM', () => client.close());
