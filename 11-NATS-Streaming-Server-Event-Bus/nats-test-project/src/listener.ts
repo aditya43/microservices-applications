@@ -2,7 +2,7 @@ import nats, { Message } from 'node-nats-streaming';
 import { randomBytes } from 'crypto';
 
 const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
-    url: 'http://localhost:4222',
+    url: 'http://localhost:4223',
 });
 
 client.on('connect', () => {
