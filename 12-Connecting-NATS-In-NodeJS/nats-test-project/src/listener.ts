@@ -73,4 +73,12 @@ abstract class Listener {
             );
         });
     }
+
+    parseMessage(msg: Message) {
+        const data = msg.getData();
+
+        return typeof data === 'string'
+            ? JSON.parse(data)
+            : JSON.parse(data.toString('utf-8'));
+    }
 }
