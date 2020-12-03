@@ -50,4 +50,13 @@ abstract class Listener {
     protected ackWait = 5 * 1000;
 
     constructor(private client: Stan) {}
+
+    subscriptionOptions() {
+        return this.client
+            .subscriptionOptions()
+            .setDeliverAllAvailable()
+            .setManualAckMode(true)
+            .setAckWait(this.ackWait)
+            .setDurableName(this.queueGroupName);
+    }
 }
