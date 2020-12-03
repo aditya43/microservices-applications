@@ -1,4 +1,4 @@
-import nats, { Message } from 'node-nats-streaming';
+import nats, { Message, Stan } from 'node-nats-streaming';
 import { randomBytes } from 'crypto';
 
 const client = nats.connect('ticketing', randomBytes(4).toString('hex'), {
@@ -42,3 +42,12 @@ client.on('connect', () => {
 
 process.on('SIGINT', () => client.close());
 process.on('SIGTERM', () => client.close());
+
+abstract class Listener {
+    abstract subject: string;
+    abstract queueGroupName: string;
+
+    protected ackWait = 5 * 1000;
+
+    constructor(private client: Stan) {}
+}
