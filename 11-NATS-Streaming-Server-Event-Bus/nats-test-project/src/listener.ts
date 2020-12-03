@@ -13,7 +13,11 @@ client.on('connect', () => {
         process.exit();
     });
 
-    const options = client.subscriptionOptions().setManualAckMode(true);
+    const options = client
+        .subscriptionOptions()
+        .setManualAckMode(true)
+        .setDeliverAllAvailable()
+        .setDurableName('accounting-service');
 
     const subscription = client.subscribe(
         'ticket:created',
