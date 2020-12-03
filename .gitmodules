@@ -7,3 +7,6 @@
 [submodule "node-microservices-common"]
 	path = 11-NATS-Streaming-Server-Event-Bus/common
 	url = git@github.com:aditya43/node-microservices-common.git
+[submodule "node-microservices-common"]
+	path = 12-Connecting-NATS-In-NodeJS/common
+	url = git@github.com:aditya43/node-microservices-common.git
