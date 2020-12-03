@@ -59,4 +59,18 @@ abstract class Listener {
             .setAckWait(this.ackWait)
             .setDurableName(this.queueGroupName);
     }
+
+    listen() {
+        const subscription = this.client.subscribe(
+            this.subject,
+            this.queueGroupName,
+            this.subscriptionOptions(),
+        );
+
+        subscription.on('message', (msg: Message) => {
+            console.log(
+                `Message Received: ${this.subject} / ${this.queueGroupName}`,
+            );
+        });
+    }
 }
