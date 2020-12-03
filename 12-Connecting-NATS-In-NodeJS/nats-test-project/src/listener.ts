@@ -46,6 +46,7 @@ process.on('SIGTERM', () => client.close());
 abstract class Listener {
     abstract subject: string;
     abstract queueGroupName: string;
+    abstract onMessage(data: any, msg: Message): void;
 
     protected ackWait = 5 * 1000;
 
@@ -71,6 +72,9 @@ abstract class Listener {
             console.log(
                 `Message Received: ${this.subject} / ${this.queueGroupName}`,
             );
+
+            const parsedData = this.parseMessage(msg);
+            this.onMessage(parsedData, msg);
         });
     }
 
