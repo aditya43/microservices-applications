@@ -18,14 +18,3 @@ client.on('connect', () => {
 
 process.on('SIGINT', () => client.close());
 process.on('SIGTERM', () => client.close());
-
-class TicketCreatedListener extends Listener {
-    subject = 'ticket:created';
-    queueGroupName = 'payments-service';
-
-    onMessage(data: any, msg: Message) {
-        console.log(`Event Data: ${data}`);
-
-        msg.ack();
-    }
-}
