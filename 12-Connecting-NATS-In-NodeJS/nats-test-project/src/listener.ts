@@ -13,31 +13,7 @@ client.on('connect', () => {
         process.exit();
     });
 
-    const options = client
-        .subscriptionOptions()
-        .setManualAckMode(true)
-        .setDeliverAllAvailable()
-        .setDurableName('accounting-service');
-
-    const subscription = client.subscribe(
-        'ticket:created',
-        'orders-service-queue-group',
-        options,
-    );
-
-    subscription.on('message', (msg: Message) => {
-        const data = msg.getData();
-
-        if (typeof data === 'string') {
-            console.log(
-                `Received event #${msg.getSequence()}, with data: ${JSON.parse(
-                    data,
-                )} `,
-            );
-        }
-
-        msg.ack(); // Manual acknowledgement
-    });
+    new TicketCreatedListener(client).listen();
 });
 
 process.on('SIGINT', () => client.close());
