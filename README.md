@@ -1,5 +1,5 @@
 ## Microservices Applications
-Technologies: TypeScript, Node.JS, Express, React, Redux, Next.js, MongoDB, Mongoose, Event Driven, Pub-Sub, Docker, Kubernetes, CI/CD, Skaffold, Apache Kafka, NATS Streaming Server etc.
+:tropical_drink: Technologies: TypeScript, Node.JS, Express, React, Redux, Next.js, MongoDB, Mongoose, Event Driven, Pub-Sub, Docker, Kubernetes, CI/CD, Skaffold, Apache Kafka, NATS Streaming Server etc.
 
 ## Author
 Aditya Hajare ([Linkedin](https://in.linkedin.com/in/aditya-hajare)).
